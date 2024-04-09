@@ -68,25 +68,27 @@ const FileUpload = ({contract, account, provider}) => {
         setFileName(e.target.files[0].name);
     };
 
-return (
-    <div className="top">
-      <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="file-upload" className="choose">
-          Choose Image
-        </label>
-        <input
-          disabled={!account}
-          type="file"
-          id="file-upload"
-          name="data"
-          onChange={retrieveFile}
-        />
-        <span className="textArea">Image: {fileName}</span>
-        <button type="submit" className="upload" disabled={!file}>
-          Upload File
-        </button>
-      </form>
-    </div>
-  );
+    return (
+        <div className="top">
+          <form className="form" onSubmit={handleSubmit}>
+            <label htmlFor="file-upload" className="choose">
+              Choose File
+            </label>
+    
+            <input
+              disabled={!account}
+              type="file"
+              id="file-upload"
+              name="data"
+              onChange={retrieveFile}
+            />
+    
+            <span className="textArea">  Selected: {fileName}</span>
+            <button type="submit" className="upload" disabled={!file}>
+               Upload
+            </button>
+          </form>
+        </div>
+      );
 };
 export default FileUpload;

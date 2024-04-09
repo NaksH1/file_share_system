@@ -22,7 +22,7 @@ const Modal = ({setModalOpen, contract}) => {
     };
     contract && accessList();
   }, [contract]);
- return (
+  return (
     <>
       <div className="modalBackground">
         <div className="modalContainer">

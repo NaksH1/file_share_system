@@ -57,7 +57,7 @@ function App() {
         provider && wallet()
     },[])
     return (
-        <>
+      <>
       {!modalOpen && (
         <button className="share" onClick={() => setModalOpen(true)}>
           Share
@@ -77,13 +77,13 @@ function App() {
       )}
 
       <div className="App">
-        <h1 style={{ color: "white" }}>File Sharing System</h1>
+        <h1 style={{ color: "#58A399" }}>BlockDrive</h1>
         <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>
 
-        <p style={{ color: "white" }}>
-          Account : {account ? account : "Not connected"}
+        <p style={{ color: "turquoise" }}>
+          Account: <div style={{color: "Black"}}>{account ? account : "Not connected"}</div>
         </p>
         <FileUpload
           account={account}
