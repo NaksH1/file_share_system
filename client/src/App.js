@@ -58,20 +58,12 @@ function App() {
     },[])
     return (
       <>
-      {!modalOpen && (
-        <button className="share" onClick={() => setModalOpen(true)}>
-          Share
-        </button>
-      )}
+      
       {modalOpen && (
         <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
       )}
 
-        {!raccessOpen && (
-        <button className="share" onClick={() => setRaccessOpen(true)}>
-          Remove Access
-        </button>
-      )}
+      
       {raccessOpen && (
         <Raccess setRaccessOpen={setRaccessOpen} contract={contract}></Raccess>
       )}
@@ -92,6 +84,25 @@ function App() {
         ></FileUpload>
         <Display contract={contract} account={account}></Display>
       </div>
+      {!modalOpen && (
+        <div className="flex-share">
+          <div className="flex-item">
+            <button className="share" onClick={() => setModalOpen(true)}>
+              Share
+            </button>
+          </div>
+        </div>
+      )}
+
+      {!raccessOpen && (
+        <div className="flex-remove">
+          <div className="flex-item">
+            <button className="remove" onClick={() => setRaccessOpen(true)}>
+              Remove Access
+            </button>
+          </div>
+        </div>
+      )}
     </>
     );
 }

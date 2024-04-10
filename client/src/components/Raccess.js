@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import "./Modal.css";
+import "./Raccess.css";
 const Raccess = ({setRaccessOpen, contract}) => {
   const remove = async () => {
     const address = document.querySelector(".address").value;
@@ -24,32 +25,34 @@ const Raccess = ({setRaccessOpen, contract}) => {
   }, [contract]);
  return (
     <>
-      <div className="modalBackground">
-        <div className="modalContainer">
-          <div className="title">Remove Access for : </div>
-          <div className="body">
-            <input
-              type="text"
-              className="address"
-              placeholder="Enter Address"
-            ></input>
-          </div>
-          <form id="myForm">
-            <select id="selectNumber">
-              <option className="address">People With Access</option>
-            </select>
-          </form>
-          <div className="footer">
-            <button onClick={() => {
-              setRaccessOpen(false);
-            }}
-            id = "cancelBtn">
-              Cancel
-            </button>
-            <button onClick = {() =>
-            remove()}>
-                Remove Access
-            </button>
+      <div className="darkBG">
+        <div className="centered">
+          <div className="modalContainer">
+            <div className="title">Remove Access for : </div>
+            <div className="body">
+              <input
+                type="text"
+                className="address"
+                placeholder="Enter Address"
+              ></input>
+            </div>
+            <form id="myForm">
+              <select id="selectNumber">
+                <option className="address">People With Access</option>
+              </select>
+            </form>
+            <div className="footer">
+              <button onClick={() => {
+                setRaccessOpen(false);
+              }}
+              id = "cancelBtn">
+                Cancel
+              </button>
+              <button onClick = {() =>
+              remove()}>
+                  Remove Access
+              </button>
+            </div>
           </div>
         </div>
       </div>
